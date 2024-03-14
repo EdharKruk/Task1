@@ -16,11 +16,12 @@ class Program
             throw new ArgumentException("Massive should be with numbers.");
         }
 
-        double sumTotal = 0;
+
+        double totalSum = 0;
         foreach (int num in nums)
         {
-            sumTotal += num;
+            totalSum += num;
         }
-        return sumTotal / nums.Length;
+        return totalSum / nums.Length;
     }
 }
