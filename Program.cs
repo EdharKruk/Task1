@@ -18,5 +18,10 @@ static void Numbers(int a, int b)
         Numbers(2, 3);
         Console.WriteLine("Hello, World!");
         Console.WriteLine("Hello, World!");
+
+        for (int i = 1; i <= 5; i++)
+        {
+            Console.WriteLine(i);
+        }
     }
 }
