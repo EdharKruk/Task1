@@ -1,27 +1,26 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿using System;
 
-
-using System.Globalization;
-class Myclass{
-
-
-
-static void Numbers(int a, int b)
+class Program
 {
-    int sum = a + b;
-    Console.WriteLine($"Sum: {sum}" );
-}
-
-
     static void Main(string[] args)
     {
-        Numbers(2, 3);
-        Console.WriteLine("Hello, World!");
-        Console.WriteLine("Hello, World!");
+        int[] numbers = { 1, 2, 3, 4, 5 };
+        double average = CalculateAverage(numbers);
+        Console.WriteLine($"Average: {average}");
+    }
 
-        for (int i = 1; i <= 5; i++)
+    static double CalculateAverage(int[] nums)
+    {
+        if (nums == null || nums.Length == 0)
         {
-            Console.WriteLine(i);
+            throw new ArgumentException("Massive should be with numbers.");
         }
+
+        double sum = 0;
+        foreach (int num in nums)
+        {
+            sum += num;
+        }
+        return sum / nums.Length;
     }
 }
