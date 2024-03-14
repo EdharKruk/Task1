@@ -4,23 +4,26 @@ class Program
 {
     static void Main(string[] args)
     {
-        int[] numbers = { 1, 2, 3, 4, 5 };
-        double average = CalculateAverage(numbers);
-        Console.WriteLine($"Average: {average}");
+        int[] numbers = { 1, 3, 5, 7, 9 };
+        int max = FindMaxValue(numbers);
+        Console.WriteLine($"Max: {max}");
     }
 
-    static double CalculateAverage(int[] nums)
+    static int FindMaxValue(int[] nums)
     {
         if (nums == null || nums.Length == 0)
         {
-            throw new ArgumentException("Massive should be with numbers.");
+            throw new ArgumentException("Should be full.");
         }
 
-        double sum = 0;
+        int max = nums[0];
         foreach (int num in nums)
         {
-            sum += num;
+            if (num > max)
+            {
+                max = num;
+            }
         }
-        return sum / nums.Length;
+        return max;
     }
 }
